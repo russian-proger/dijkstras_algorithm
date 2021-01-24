@@ -1,0 +1,134 @@
+@keyframes a
+  from
+    background: white
+  to
+    background: #cccccc
+
+.g-container
+  position: relative
+  width: 100%
+  height: 100%
+  user-select: none
+
+  &.blink-vertice
+    .g-vertice
+      animation-name: a
+      animation-duration: 1s
+      animation-iteration-count: infinite
+      animation-timing-function: ease-in-out
+      animation-direction: alternate
+      border-color: #4caf50 !important
+      cursor: pointer !important
+
+  .g-e-layer
+    position: absolute
+    width: inherit
+    height: inherit
+
+    .line
+      position: absolute
+      height: 5px
+      background: gray
+      transform-origin: center center
+
+    .g-edge
+      position: absolute
+      transform-origin: center center
+
+      .g-edge-wrapper
+        position: relative
+        width: inherit
+        height: inherit
+
+        &.highlighted
+          .g-edge-line
+            box-sizing: border-box
+            height: 10px
+            background: #FFEB3B
+            border: 3px solid #F9A825
+          .g-edge-weight
+            transform: translate(-15px, -24px)
+
+        .g-edge-line
+          height: 4px
+          background: #000
+
+        .g-edge-weight
+          position: absolute
+          width: 25px
+          height: 25px
+          text-align: center
+          border: 3px solid black
+          background-color: black
+          display: flex
+          justify-content: center
+          align-items: center
+          transform: translate(-15px, -18px)
+          border-radius: 50%
+          color: white
+          z-index: 9999
+
+
+
+  .g-v-layer
+    position: absolute
+    width: inherit
+    height: inherit
+
+    .g-vertice
+      position: absolute
+      width: 50px
+      height: 50px
+      border: 4px solid black
+      background-color: white
+      border-radius: 50%
+      cursor: grab
+      transform: translate(-50%, -50%)
+
+      &.grabbing
+        background-color: #ddd
+        width: 45px
+        height: 45px
+
+      &:hover
+        border-width: 5px
+
+      &:active
+        cursor: grabbing !important
+
+      .g-vertice-wrapper
+        position: relative
+        width: 100%
+        height: 100%
+
+        .g-vertice-index
+          font-family: "Roboto"
+          font-size: 16pt
+          position: absolute
+          left: 50%
+          top: 50%
+          transform: translate(-50%, -50%)
+
+        .g-vertice-mark
+          position: absolute
+          left: -30px
+          top: -22px
+          min-width: 20px
+          font-family: "Roboto"
+          font-weight: bold
+          text-align: center
+          font-size: 14pt
+          background-color: white
+          border: 4px solid #333333
+          border-radius: 10px
+          padding: 2px 7px
+          white-space: nowrap
+
+          &.inf
+            top: -17px
+            left: 8px
+            background-color: transparent
+            font-family: monospace
+            font-size: 25pt
+            border: 0px solid transparent
+            font-weight: 900

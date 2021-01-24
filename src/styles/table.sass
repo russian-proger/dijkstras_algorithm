@@ -1,0 +1,60 @@
+table.table-container
+  border-collapse: collapse
+  box-sizing: border-box
+  margin: 30px
+  border: 3px solid #a7a7a7
+
+  caption
+    font-family: "Roboto"
+    margin-bottom: 4px
+
+  &:not(.bool-table) td.table-cell:not(.table-empty-cell):not(:first-child):not(.table-header-cell)
+    cursor: cell
+
+  tr
+    height: 30px
+
+  td.table-cell
+    min-width: 20px
+    min-height: 40px
+    padding: 2px 5px
+    text-align: center
+    border: 1px solid black
+
+    &.table-header-cell:not(.table-empty-cell)
+      border-bottom: 2px solid black !important
+
+    &.table-empty-cell:not(.table-header-cell)
+      background-color: gray
+    &.table-empty-cell.table-header-cell
+      background-color: black
+
+  & > tbody > tr.table-row
+    &:hover
+      background-color: #e8e8e8
+
+
+    & > td.table-cell
+      &:first-child
+        border-right: 2px solid black !important
+      &:hover
+        background-color: #b7b7b7
+      &:focus
+        background-color: white
+
+      &[contenteditable="false"]
+        cursor: initial !important
+
+      input
+        position: relative
+        top: 2px
+        cursor: pointer
+        width: 17px
+        height: 17px
+        margin: 0
+
+        &.checked
+          background: #0075ff
+        &[disabled]
+          appearance: none
+          cursor: initial

@@ -1,0 +1,60 @@
+.top_home_link {
+	--red: #FF4F72;
+	--green: #4BB34B;
+	--blue: #78D2FF;
+	--yellow: #FFD54F;
+}
+
+.garland {
+  zoom: 1.5;
+}
+
+.garland .lamp {
+	animation-play-state: paused;
+}
+
+.garland:hover .lamp {
+	animation-play-state: running;
+}
+
+.lamp {
+	--t: 2s;
+	animation-name: blink;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: step-end;
+}
+
+.lamp:nth-child(1n) {
+	animation-delay: calc(2s / -4 * 3);
+}
+
+.lamp:nth-child(2n) {
+	animation-delay: calc(2s / -4 * 2);
+}
+
+.lamp:nth-child(3n) {
+	animation-delay: calc(2s / -4 * 1);
+}
+
+.lamp:nth-child(4n) {
+	animation-delay: calc(2s / -4 * 0);
+}
+
+@keyframes blink {
+	0% {
+		fill: #FF4F72;
+	}
+	25% {
+		fill: #FFD54F;
+	}
+	50% {
+		fill: #4BB34B;
+	}
+	75% {
+		fill: #78D2FF;
+	}
+	100% {
+		fill: #FF4F72;
+	}
+}
