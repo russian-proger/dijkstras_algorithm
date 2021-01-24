@@ -16,7 +16,6 @@ git clone https://github.com/russian-proger/examinator.git
 2. Выполните следующие команды в папке с исходниками:
 ```
 npm install
-npm run build:prod
-node server.js
+npm run watch
 ```
 3. Можете редактировать код и смотреть результат в index.html
